@@ -63,4 +63,11 @@ public class UserValidatorTest {
 
     }
 
+    @Test
+    public void givenPassword_WithMinEightChar_ReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validatePassword("Amritha11");
+        Assert.assertEquals(true,result);
+    }
+
 }
