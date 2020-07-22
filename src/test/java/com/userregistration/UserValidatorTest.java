@@ -62,4 +62,5 @@ public class UserValidatorTest {
         Assert.assertEquals(false,result);
 
     }
+
 }
