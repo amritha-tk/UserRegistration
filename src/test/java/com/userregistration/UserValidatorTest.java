@@ -70,4 +70,11 @@ public class UserValidatorTest {
         Assert.assertEquals(true,result);
     }
 
+    @Test
+    public void givenPassword_WithAtleastOneUppercase_ReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validatePassword("MyHome12");
+        Assert.assertEquals(true,result);
+
+    }
 }
