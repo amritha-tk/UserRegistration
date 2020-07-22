@@ -66,14 +66,14 @@ public class UserValidatorTest {
     @Test
     public void givenPassword_WithMinEightChar_ReturnTrue() {
         UserValidator validator = new UserValidator();
-        boolean result = validator.validatePassword("Amritha11");
+        boolean result = validator.validatePassword("Amri&tha11");
         Assert.assertEquals(true,result);
     }
 
     @Test
     public void givenPassword_WithAtleastOneUppercase_ReturnTrue() {
         UserValidator validator = new UserValidator();
-        boolean result = validator.validatePassword("MyHome12");
+        boolean result = validator.validatePassword("MyHome12#");
         Assert.assertEquals(true,result);
 
     }
@@ -81,9 +81,23 @@ public class UserValidatorTest {
     @Test
     public void givenPassword_WithAtleastOneDigit_ReturnTrue() {
         UserValidator validator = new UserValidator();
-        boolean result = validator.validatePassword("HariKrish10");
+        boolean result = validator.validatePassword("$HariKrish10");
         Assert.assertEquals(true,result);
 
     }
 
+    @Test
+    public void givenPassword_WithSpecialChar_ReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validatePassword("Amritha@123");
+        Assert.assertEquals(true,result);
+
+    }
+
+    @Test
+    public void givenPassword_WhenInvalid_ReturnsFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validatePassword("amritha");
+        Assert.assertEquals(false,result);
+    }
 }
