@@ -47,4 +47,19 @@ public class UserValidatorTest {
         boolean result = validator.validateEmail("xyz@gg.com");
         Assert.assertEquals(false,result);
     }
+
+    @Test
+    public void givenMobileNumber_WhenValid_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validateMobileNumber("91 9846974183");
+        Assert.assertEquals(true,result);
+    }
+
+    @Test
+    public void givenMobileNumber_WhenInvalid_ShouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validateMobileNumber("9846974183");
+        Assert.assertEquals(false,result);
+
+    }
 }
