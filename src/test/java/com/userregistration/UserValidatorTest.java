@@ -77,4 +77,13 @@ public class UserValidatorTest {
         Assert.assertEquals(true,result);
 
     }
+
+    @Test
+    public void givenPassword_WithAtleastOneDigit_ReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validatePassword("HariKrish10");
+        Assert.assertEquals(true,result);
+
+    }
+
 }
